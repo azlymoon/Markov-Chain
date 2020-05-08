@@ -1,7 +1,0 @@
-read\_files module
-==================
-
-.. automodule:: read_files
-   :members:
-   :undoc-members:
-   :show-inheritance:
