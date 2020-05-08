@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>dictogram module &#8212; документация Markov </title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="markov module" href="markov.html" />
+    <link rel="prev" title="counter module" href="counter.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-dictogram">
+<span id="dictogram-module"></span><h1>dictogram module<a class="headerlink" href="#module-dictogram" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="py class">
+<dt id="dictogram.Dictogram">
+<em class="property">class </em><code class="sig-prename descclassname">dictogram.</code><code class="sig-name descname">Dictogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dictogram.Dictogram" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</div></blockquote>
+<dl class="py method">
+<dt id="dictogram.Dictogram.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dictogram.Dictogram.count" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращаем значение счетчика элемента, или 0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>item</strong> – значение</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>значение счетчика</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dictogram.Dictogram.return_random_word">
+<code class="sig-name descname">return_random_word</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dictogram.Dictogram.return_random_word" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вернуть случайное слово</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат</dt>
+<dd class="field-odd"><p>случайное слово</p>
+</dd>
+<dt class="field-even">Тип результата</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dictogram.Dictogram.return_weighted_random_word">
+<code class="sig-name descname">return_weighted_random_word</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dictogram.Dictogram.return_weighted_random_word" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сгенерировать псевдослучайное число между 0 и (n-1), где n - общее число слов</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат</dt>
+<dd class="field-odd"><p>случайное число</p>
+</dd>
+<dt class="field-even">Тип результата</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dictogram.Dictogram.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dictogram.Dictogram.update" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Обновляем распределение элементами из имеющегося итерируемого набора данных</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>iterable</strong> – optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Markov</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">markov</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="counter.html">counter module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dictogram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov.html">markov module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov_chain.html">markov_chain module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read_files.html">read_files module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokenizer.html">tokenizer module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">markov</a><ul>
+      <li>Previous: <a href="counter.html" title="предыдущая глава">counter module</a></li>
+      <li>Next: <a href="markov.html" title="следующая глава">markov module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Skvortsov Nikita, Petrovanov Ilya.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/dictogram.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

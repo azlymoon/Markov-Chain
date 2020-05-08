@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>markov module &#8212; документация Markov </title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="markov_chain module" href="markov_chain.html" />
+    <link rel="prev" title="dictogram module" href="dictogram.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-markov">
+<span id="markov-module"></span><h1>markov module<a class="headerlink" href="#module-markov" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="py class">
+<dt id="markov.MarkovGenerator">
+<em class="property">class </em><code class="sig-prename descclassname">markov.</code><code class="sig-name descname">MarkovGenerator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strategy</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Обертка для „class MarkovChain“ и „class Tokenizer“</p>
+<dl class="py class">
+<dt id="markov.MarkovGenerator.GenerateStrategy">
+<em class="property">class </em><code class="sig-name descname">GenerateStrategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">window_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.GenerateStrategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Стратегия генерации текста</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="markov.MarkovGenerator.RetrainStrategy">
+<em class="property">class </em><code class="sig-name descname">RetrainStrategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text_path</span></em>, <em class="sig-param"><span class="n">window_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.RetrainStrategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <a class="reference internal" href="#markov.MarkovGenerator.Strategy" title="markov.MarkovGenerator.Strategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">markov.MarkovGenerator.Strategy</span></code></a></p>
+</div></blockquote>
+<p>Стратегия дообучения цепи Маркова</p>
+<dl class="py method">
+<dt id="markov.MarkovGenerator.RetrainStrategy.retrain">
+<code class="sig-name descname">retrain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.RetrainStrategy.retrain" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Запуск дообучения цепи Маркова</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="markov.MarkovGenerator.Strategy">
+<em class="property">class </em><code class="sig-name descname">Strategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text_path</span></em>, <em class="sig-param"><span class="n">window_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.Strategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Базовая стратегия генератора</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="markov.MarkovGenerator.TrainStrategy">
+<em class="property">class </em><code class="sig-name descname">TrainStrategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text_path</span></em>, <em class="sig-param"><span class="n">window_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.TrainStrategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <a class="reference internal" href="#markov.MarkovGenerator.Strategy" title="markov.MarkovGenerator.Strategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">markov.MarkovGenerator.Strategy</span></code></a></p>
+</div></blockquote>
+<p>Стратегия для первичного запуска цепи Маркова</p>
+<dl class="py method">
+<dt id="markov.MarkovGenerator.TrainStrategy.train">
+<code class="sig-name descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.TrainStrategy.train" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Запуск первичнго обучения цепи Маркова</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt id="markov.MarkovGenerator.generate_sentence">
+<code class="sig-name descname">generate_sentence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size_sent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.generate_sentence" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Генерация предложения</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>size_sent</strong> (<em>int</em>) – количество слов в пердложение</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>сгенеиррованное предложение</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="markov.MarkovGenerator.generate_sentences">
+<code class="sig-name descname">generate_sentences</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span></em>, <em class="sig-param"><span class="n">size_sent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov.MarkovGenerator.generate_sentences" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Генерация нескольких предложений</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>int</em>) – количесвто предложений</p></li>
+<li><p><strong>size_sent</strong> (<em>int</em>) – количесвто слов в предложение</p></li>
+</ul>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>сгенерированные предложения</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="markov.main">
+<code class="sig-prename descclassname">markov.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#markov.main" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Markov</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">markov</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="counter.html">counter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictogram.html">dictogram module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">markov module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov_chain.html">markov_chain module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read_files.html">read_files module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokenizer.html">tokenizer module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">markov</a><ul>
+      <li>Previous: <a href="dictogram.html" title="предыдущая глава">dictogram module</a></li>
+      <li>Next: <a href="markov_chain.html" title="следующая глава">markov_chain module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Skvortsov Nikita, Petrovanov Ilya.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/markov.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

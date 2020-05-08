@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>tokenizer module &#8212; документация Markov </title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="read_files module" href="read_files.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-tokenizer">
+<span id="tokenizer-module"></span><h1>tokenizer module<a class="headerlink" href="#module-tokenizer" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="py class">
+<dt id="tokenizer.Tokenizer">
+<em class="property">class </em><code class="sig-prename descclassname">tokenizer.</code><code class="sig-name descname">Tokenizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strategy</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Токенизатор текста</p>
+<dl class="py class">
+<dt id="tokenizer.Tokenizer.FullLoadStrategy">
+<em class="property">class </em><code class="sig-name descname">FullLoadStrategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.FullLoadStrategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <a class="reference internal" href="#tokenizer.Tokenizer.Strategy" title="tokenizer.Tokenizer.Strategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">tokenizer.Tokenizer.Strategy</span></code></a></p>
+</div></blockquote>
+<p>Стратегия, полностью загружающая токенизатор из базы данных</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tokenizer.Tokenizer.GenerateNewStrategy">
+<em class="property">class </em><code class="sig-name descname">GenerateNewStrategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.GenerateNewStrategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <a class="reference internal" href="#tokenizer.Tokenizer.Strategy" title="tokenizer.Tokenizer.Strategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">tokenizer.Tokenizer.Strategy</span></code></a></p>
+</div></blockquote>
+<p>Стратегия, предназначенная для первичного запуска токенизатора</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tokenizer.Tokenizer.LoadStrategy">
+<em class="property">class </em><code class="sig-name descname">LoadStrategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.LoadStrategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Стратегия для работы с токенизатором из базы данных</p>
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.LoadStrategy.idx_to_word">
+<code class="sig-name descname">idx_to_word</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.LoadStrategy.idx_to_word" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Получение слова для заданного индекса из базы данных</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>idx</strong> (<em>int</em>) – индекс</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>слово по заданному индексу</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.LoadStrategy.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em>, <em class="sig-param"><span class="n">counter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.LoadStrategy.update" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавление слова в токенизатор</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word</strong> (<em>str</em>) – слово</p></li>
+<li><p><strong>counter</strong> (<em>class counter.Counter</em>) – счетчик</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.LoadStrategy.update_from_text">
+<code class="sig-name descname">update_from_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text_path</span></em>, <em class="sig-param"><span class="n">counter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.LoadStrategy.update_from_text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Обновление токенизатора по тексту</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text_path</strong> (<em>str</em>) – путь к тексту</p></li>
+<li><p><strong>counter</strong> (<em>class counter.Counter</em>) – счетчик</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.LoadStrategy.update_many">
+<code class="sig-name descname">update_many</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">words</span></em>, <em class="sig-param"><span class="n">counter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.LoadStrategy.update_many" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Множественный вызов def update(word, counter)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>words</strong> (<em>list</em>) – список слов</p></li>
+<li><p><strong>counter</strong> (<em>class counter.Counter</em>) – счетчик</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.LoadStrategy.word_to_idx">
+<code class="sig-name descname">word_to_idx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.LoadStrategy.word_to_idx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Получение идекса по заданному слову из базы данных</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>str</em>) – слово</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>индекс по заданному слову</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tokenizer.Tokenizer.Strategy">
+<em class="property">class </em><code class="sig-name descname">Strategy</code><a class="headerlink" href="#tokenizer.Tokenizer.Strategy" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Базовая стратегия токенизатора</p>
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.Strategy.idx_to_word">
+<code class="sig-name descname">idx_to_word</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.Strategy.idx_to_word" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Получение слова для заданного индекса</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>idx</strong> (<em>int</em>) – индекс</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>слово по заданному индексу</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.Strategy.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.Strategy.update" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавление слова в токенизатор</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>str</em>) – слово</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.Strategy.word_to_idx">
+<code class="sig-name descname">word_to_idx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.Strategy.word_to_idx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Получение индекса для заданного слова</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>str</em>) – слово</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>индекс по заданному слову</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.change_strategy">
+<code class="sig-name descname">change_strategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strategy</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.change_strategy" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Смена стратегии</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>strategy</strong> (<em>class tokenizer.Tokenizer.Strategy</em>) – новая стратегия</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.idx2word">
+<code class="sig-name descname">idx2word</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.idx2word" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вызов метода „idx2word“ для заданной стратегии</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>idx</strong> (<em>int</em>) – индекс</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>слово по заданному индексу</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.int_to_text">
+<code class="sig-name descname">int_to_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text_as_int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.int_to_text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конвертация токенизированного текста в обычный</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>text_as_int</strong> (<em>list</em><em>, </em><em>optional</em>) – токенизированный текст</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>текст</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.save" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сохранение токенизатора в базу данных</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>collection</strong> – имя коллекции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.text_to_int">
+<code class="sig-name descname">text_to_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.text_to_int" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конвертация текста в цифры</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em><em>, </em><em>optional</em>) – текст</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>токенизированный текст</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tokenizer.Tokenizer.word2idx">
+<code class="sig-name descname">word2idx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tokenizer.Tokenizer.word2idx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вызов метода „word2idx“ для заданной стратегии</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>str</em>) – слово</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>индекс по заданному слову</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Markov</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">markov</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="counter.html">counter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictogram.html">dictogram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov.html">markov module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov_chain.html">markov_chain module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read_files.html">read_files module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tokenizer module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">markov</a><ul>
+      <li>Previous: <a href="read_files.html" title="предыдущая глава">read_files module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Skvortsov Nikita, Petrovanov Ilya.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tokenizer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>counter module &#8212; документация Markov </title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="dictogram module" href="dictogram.html" />
+    <link rel="prev" title="markov" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-counter">
+<span id="counter-module"></span><h1>counter module<a class="headerlink" href="#module-counter" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="py class">
+<dt id="counter.Counter">
+<em class="property">class </em><code class="sig-prename descclassname">counter.</code><code class="sig-name descname">Counter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#counter.Counter" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Счетчик индексов в базе данных</p>
+<dl class="py method">
+<dt id="counter.Counter.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#counter.Counter.get" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Получение „last_id“</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>collection_name</strong> (<em>str</em>) – имя коллекции</p>
+</dd>
+<dt class="field-even">Результат</dt>
+<dd class="field-even"><p>last_id</p>
+</dd>
+<dt class="field-odd">Тип результата</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="counter.Counter.increment">
+<code class="sig-name descname">increment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection_name</span></em>, <em class="sig-param"><span class="n">increment_amount</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#counter.Counter.increment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Увеличение поля „last_id“ для „collection_name“ на „increment_amount“</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_name</strong> (<em>str</em>) – имя коллекции</p></li>
+<li><p><strong>increment_amount</strong> (<em>int</em>) – значение приращения</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="counter.Counter.initialize">
+<code class="sig-name descname">initialize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection_name</span></em>, <em class="sig-param"><span class="n">last_id</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#counter.Counter.initialize" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_name</strong> (<em>str</em>) – имя коллекции</p></li>
+<li><p><strong>last_id</strong> (<em>int</em>) – id последнего элемента</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="counter.Counter.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#counter.Counter.update" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Обновление поля „last_id“ для „collection_name“ в коллекции „counter“</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>collection_name</strong> (<em>str</em>) – имя коллекции</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Markov</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">markov</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">counter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictogram.html">dictogram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov.html">markov module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov_chain.html">markov_chain module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read_files.html">read_files module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokenizer.html">tokenizer module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">markov</a><ul>
+      <li>Previous: <a href="modules.html" title="предыдущая глава">markov</a></li>
+      <li>Next: <a href="dictogram.html" title="следующая глава">dictogram module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Skvortsov Nikita, Petrovanov Ilya.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/counter.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
