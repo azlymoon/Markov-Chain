@@ -125,7 +125,7 @@ class MarkovGenerator:
         :rtype: list
         """
         res = []
-        for i in range(count):
+        for _ in range(count):
             try:
                 sentence = self.generate_sentence(size_sent) + '\n' * 3
                 res.append(sentence)
